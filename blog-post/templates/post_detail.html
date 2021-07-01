@@ -1,0 +1,53 @@
+ {% extends 'main.html' %}
+ 
+
+
+
+
+
+
+
+
+
+{% block content %}
+<div class="container px-4">
+  <div class="row gx-5">
+    <div class="col">
+     <div class="p-3 border bg-light"><a class="btn btn-primary" href="{% url 'post_update' object.slug %}">update</a></div>
+    </div>
+    <div class="col">
+      <div class="p-3 border bg-light"><a class="btn btn-danger"href="{% url 'post_delete' object.slug%}">Delete</a></div>
+    </div>
+  </div>
+</div>
+
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <div class="img-container">
+                        <img src="{{object.image.url}}" alt="team member" class="img-full" width='auto'>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-8">
+                    <div class="member_designation">
+                        <h2>{{object.title}}</h2>
+                        
+                    </div>
+                    <div class="member_desc">
+                        <p>
+                           {{object.content|safe}}
+                        </p>
+                    </div>
+            </div>
+                   
+                   
+                 
+        
+
+        
+    </section>
+</div>
+
+
+
+{% endblock content %}
+           

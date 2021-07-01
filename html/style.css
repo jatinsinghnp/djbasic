@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+  font-size: 'Open Sans',sans-serif;
+}
+
+header{
+    height: 100px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+
+
+ul{
+    display: flex;
+   list-style-type: none;
+}
+
+ul li a{
+    padding: 0 20px;
+    text-decoration: none;
+    color: #3a3a3a;
+}
+
+li a::after{
+    content: '';
+    display: block;
+    height: 4px;
+    width: 0;
+    background: #c4c4f7;
+    transition:all .5s ;
+
+}
+li a:hover::after{
+    width: 100%;
+
+}
+
+
+main{
+    display: flex;
+    border: 1px solid red;
+    height: calc(100vh - 100px);
+    align-items: center;
+    justify-content: center;
+}
+
+.hearo-img{
+    max-width: 670;
+    height: auto;
+}
+
+
+.content-left{
+    width: 30%;
+}
+
+
+
+main h1{
+    font-size: 54px;
+    color: #133B4f;
+    text-transform: uppercase;
+}
+
+
+main h2{
+    font-size: 25px;
+    color: #FCA78C;
+    font-weight: 400;
+    letter-spacing: 8px;
+}

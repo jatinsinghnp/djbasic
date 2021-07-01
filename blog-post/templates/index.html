@@ -1,0 +1,56 @@
+{% extends 'main.html' %}
+
+
+
+
+{% block content %}
+
+
+<div class="row">
+                <div class="col-lg-8">
+                    <!-- Post content-->
+                    <article>
+                        <!-- Post header-->
+                     {% for  post in  posts%}
+                     
+                         <header class="mb-4">
+                            <!-- Post title-->
+                            <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+                            <!-- Post meta content-->
+                            <div class="text-muted fst-italic mb-2">{{post.created_at}}</div>
+                            <!-- Post categories-->
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Web Design</a>
+                            <a class="badge bg-secondary text-decoration-none link-light" href="#!">Freebies</a>
+                        </header>
+                        <!-- Preview image figure-->
+                        <figure class="mb-4"><img class="img-fluid rounded" src="{{post.image.url}}" alt="..." /></figure>
+                        <!-- Post content-->
+                        <section class="mb-5">
+                          <p>
+                           {{post.content|safe}}
+                          
+                          </p>
+                        </section>
+                     
+                     <a class="btn btn-primary" href="{% url 'post_detail' post.slug%}">learn more</a>
+
+                     
+                     {% endfor %}
+                    </article>
+                    <!-- Comments section-->
+                    {% include 'components/comments.html' %}
+
+                </div>
+                <!-- Side widgets-->
+                <div class="col-lg-4">
+                    <!-- Search widget-->
+                  {% include 'components/search.html' %}
+                    
+                    <!-- Categories widget-->
+                  {% include 'components/catagory.html' %}
+                    <!-- Side widget-->
+                    {% include 'components/widget.html' %}
+                </div>
+</div>
+
+{% endblock content %}
